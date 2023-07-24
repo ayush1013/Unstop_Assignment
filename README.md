@@ -7,8 +7,8 @@ Welcome to "Assessment Manager," an intuitive and user-friendly front-end web ap
 * Deployed link: ...https://my-assignment-six.vercel.app/
 
 ## Features
--User-Friendly Interface
--fully Responsive UI
--well designed
+- User-Friendly Interface 
+- fully Responsive UI
+- well designed
 
 ## Product
