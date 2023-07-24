@@ -3,6 +3,7 @@ import React from "react";
 import SideNav from "../Components/SideNav";
 import Navbar from "../Components/Navbar";
 import Overview from "../Components/Overview";
+import Assessments from "../Components/Assessments";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       >
         <Navbar />
         <Overview />
+        <Assessments/>
       </Box>
     </Flex>
   );
