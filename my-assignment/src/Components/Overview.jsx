@@ -7,7 +7,11 @@ import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
 
 const Overview = () => {
   return (
-    <Box bgColor="white" p="20px">
+    <Box
+      bgColor="white"
+      p="20px"
+      display={{ base: "none", md: "block", lg: "block" }}
+    >
       <Text fontSize={"18px"} fontWeight={"500"} textAlign={"left"}>
         Assessment Overview
       </Text>
@@ -18,9 +22,13 @@ const Overview = () => {
         borderRadius={"15px"}
         border="1px solid #E3E5E8"
         fontWeight={"500"}
-        gridTemplateColumns={{base: "repeat(4,auto)", md: "repeat(2,auto)", lg:"repeat(4,auto)" }}
+        gridTemplateColumns={{
+          base: "repeat(4,auto)",
+          md: "repeat(2,auto)",
+          lg: "repeat(4,auto)",
+        }}
       >
-        <Box h="100%" p="15px 20px"  >
+        <Box h="100%" p="15px 20px">
           <Text fontSize={"14px"} fontWeight={"bold"} textAlign={"left"}>
             Total Assessment
           </Text>
@@ -42,7 +50,7 @@ const Overview = () => {
         </Box>
 
         <Box
-          borderRight={{base:"none",md:"none",lg:"1px solid #E3E5E8"}}
+          borderRight={{ base: "none", md: "none", lg: "1px solid #E3E5E8" }}
           borderLeft={"1px solid #E3E5E8"}
           p="15px 20px"
         >
@@ -96,9 +104,13 @@ const Overview = () => {
         </Box>
         <Box
           borderRight={"1px solid #E3E5E8"}
-          borderTop={{base:"1px solid #E3E5E8", md:"1px solid #E3E5E8", lg:"none"}}
+          borderTop={{
+            base: "1px solid #E3E5E8",
+            md: "1px solid #E3E5E8",
+            lg: "none",
+          }}
           p="15px 20px"
-          gridColumnStart={{base:"3", md:"1", lg:"3"}}
+          gridColumnStart={{ base: "3", md: "1", lg: "3" }}
         >
           <Text fontSize={"14px"} fontWeight={"bold"} textAlign={"left"}>
             Candidates Source
@@ -130,7 +142,9 @@ const Overview = () => {
                     +75
                   </span>{" "}
                 </Text>
-                <Text fontSize={"12px"}textAlign={"left"} >Email</Text>
+                <Text fontSize={"12px"} textAlign={"left"}>
+                  Email
+                </Text>
               </Box>
               <Box
                 alignItems={"center"}
@@ -165,8 +179,16 @@ const Overview = () => {
             </Flex>
           </Flex>
         </Box>
-        <Box h="100%" p="15px 20px" borderTop={{base:"1px solid #E3E5E8", md:"1px solid #E3E5E8", lg:"none"}} >
-          <Text fontSize={"14px"} fontWeight={"bold"} textAlign={"left"}>  
+        <Box
+          h="100%"
+          p="15px 20px"
+          borderTop={{
+            base: "1px solid #E3E5E8",
+            md: "1px solid #E3E5E8",
+            lg: "none",
+          }}
+        >
+          <Text fontSize={"14px"} fontWeight={"bold"} textAlign={"left"}>
             Total Purpose
           </Text>
           <Flex mt="20px" gap="10px" alignItems={"center"}>

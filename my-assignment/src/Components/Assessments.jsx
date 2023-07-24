@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Text, useDisclosure } from "@chakra-ui/react";
 import React from "react";
 import { assessmentData } from "../Data/Assessments";
 import AddIcon from "@mui/icons-material/Add";
@@ -6,11 +6,19 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
+import AddItem from "./AddItem";
 
 const Assessments = () => {
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box bgColor="white" p="20px">
+      <Text fontSize={"18px"} fontWeight={"500"} textAlign={"left"}>
+        My Assessment
+      </Text>
       <Grid
+        mt="20px"
         gridTemplateColumns={{
           base: "repeat(1, 1fr)",
           md: "repeat(2, 1fr)",
@@ -25,9 +33,10 @@ const Assessments = () => {
           borderStyle={"dashed"}
           bgColor="#F6F8FA"
         >
-          <Button borderRadius="50%" w="65px" h="65px" bgColor="white">
+          {/* <Button borderRadius="50%" w="65px" h="65px" bgColor="white">
             <AddIcon fontSize="large" sx={{ color: "blue" }} />
-          </Button>
+          </Button> */}
+          <AddItem isOpen={isOpen} onClose={onClose} onOpen={onOpen} />
           <Text fontWeight={"500"} fontSize={"18px"}>
             New Assessment
           </Text>

@@ -4,6 +4,7 @@ import SideNav from "../Components/SideNav";
 import Navbar from "../Components/Navbar";
 import Overview from "../Components/Overview";
 import Assessments from "../Components/Assessments";
+import MobNav from "../Components/MobNav";
 
 const Home = () => {
   return (
@@ -11,10 +12,11 @@ const Home = () => {
       <SideNav />
 
       <Box
-        w={{ base: "83%", md: "83%", lg: "88%" }}
+        w={{ base: "100%", md: "83%", lg: "88%" }}
         position="absolute"
-        left={{ base: "16%", md: "16%", lg: "11%" }}
+        left={{ base: "0", md: "16%", lg: "11%" }}
       >
+        <MobNav/>
         <Navbar />
         <Overview />
         <Assessments/>

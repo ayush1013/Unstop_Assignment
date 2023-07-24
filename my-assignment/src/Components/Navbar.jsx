@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import LaptopIcon from '@mui/icons-material/Laptop';
 
 function Navbar() {
   return (
@@ -8,12 +9,12 @@ function Navbar() {
       h="70px"
       bgColor="white"
       justifyContent={"space-between"}
-        pr="20px"
+      pr="20px"
       borderBottom={"2px solid #E3E5E8"}
-      borderTopRadius={"15px"}
+      borderTopRadius={{base:"0px",md:"15px",lg:"15px"}}
       alignItems={"center"}
     >
-      <Flex alignItems={"center"}>
+      <Flex alignItems={"center"} w={{base:"100%"}} >
         <Box
           fontSize={"20px"}
           fontWeight={"bold"}
@@ -35,8 +36,8 @@ function Navbar() {
           </Text>
         </Box>
       </Flex>
-      <Box>
-        <SmartphoneIcon sx={{ color: "#1C4980" }}  />
+      <Box display={{base:"none",md:"block", lg:"block"}} >
+        <SmartphoneIcon sx={{ color: "#1C4980" }} />
       </Box>
     </Flex>
   );

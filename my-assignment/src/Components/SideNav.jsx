@@ -14,6 +14,7 @@ const SideNav = () => {
       bgColor="white"
       w={{ base: "15%", md: "15%", lg: "10%" }}
       h="100vh"
+      display={{base:"none",md:"block", lg:"block"}}
     >
       <Grid gap="10px" p="10px 20px " fontSize={"13px"} fontWeight={"500"}>
         <Box p="10px">
