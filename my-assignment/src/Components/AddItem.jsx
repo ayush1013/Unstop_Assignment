@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { useRef } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import ClearIcon from "@mui/icons-material/Clear";
 
 function AddItem({ isOpen, onOpen, onClose }) {
   //   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -25,18 +26,20 @@ function AddItem({ isOpen, onOpen, onClose }) {
   const [text, setText] = useState("");
   const [skills, setSkills] = useState([]);
 
-  function handleKeyPress(e){
-    if(e.key === "Enter"){
-        setSkills([...skills, text]);
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      setSkills([...skills, text]);
+      setText("");
     }
-    console.log(skills)
-  } 
-
-  function handleRemove(){
-    
+    console.log(skills);
   }
 
-  console.log(text)
+  function handleRemove(i) {
+    skills.splice(i, 1);
+    console.log(skills);
+  }
+
+  console.log(text);
 
   return (
     <>
@@ -58,7 +61,7 @@ function AddItem({ isOpen, onOpen, onClose }) {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent top={{base:"50px", md:"50px", lg:"0"}} borderTopRadius={"20px"} w={{base:"100%", md:"50%", lg:"40%"}} m="auto" >
           <DrawerCloseButton />
           <DrawerHeader borderBottom={"1px solid #E3E5E8"} color="#1C4980">
             Create new assessment
@@ -86,32 +89,57 @@ function AddItem({ isOpen, onOpen, onClose }) {
               </Box>
               <Box>
                 <Text>Skills</Text>
-                <Grid>
-                    {
-                        skills.length>0 && skills.map((elem)=>(
-                            <Flex>
-                                <Text>{elem}</Text>
-                                <Text onClick={handleRemove} >✖</Text>
-                            </Flex>
-                        ))
-                    }
+                <Grid
+                  border={"1px solid #E3E5E8"}
+                  p="10px"
+                  gridTemplateColumns={{base:"repeat(2,auto)", md:"repeat(3,auto)",lg:"repeat(4,auto)"}}
+                  fontSize={"12px"}
+                  gap="15px"
+                >
+                  {skills.length > 0 &&
+                    skills.map((elem, i) => (
+                      <Flex
+                        bgColor="#DDEDFF"
+                        p="5px 10px"
+                        borderRadius={"15px"}
+                        justifyContent={"space-between"}
+                        alignItems="center"
+                      >
+                        <Text>{elem}</Text>
+                        <Text onClick={() => handleRemove(i)}>
+                          <ClearIcon
+                            sx={{ fontSize: "20px", marginLeft: "5px" }}
+                          />
+                        </Text>
+                      </Flex>
+                    ))}
                 </Grid>
                 <Input
+                  mt="-1px"
                   placeholder="Type Here"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                   onKeyPress={handleKeyPress}
                 ></Input>
               </Box>
+              <Box mt="10px">
+                <Text>Duration of assessment</Text>
+                <Input placeholder="Type Here" type="time" mt="5px" />
+              </Box>
             </Grid>
           </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          <Button
+            bgColor="#0073E6"
+            color="white"
+            m="auto"
+            display={"block"}
+            w="92%"
+            mt="20px"
+            mb="20px"
+          >
+            Next
+          </Button>
         </DrawerContent>
       </Drawer>
     </>
