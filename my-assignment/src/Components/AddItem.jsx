@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Drawer,
   DrawerBody,
@@ -19,12 +19,14 @@ import { useRef } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 
+const arr = ["Java", "Javascript", "UI/UX Design", "Python", "DSA"]
+
 function AddItem({ isOpen, onOpen, onClose }) {
   //   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
   const [text, setText] = useState("");
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState(arr);
 
   function handleKeyPress(e) {
     if (e.key === "Enter") {
@@ -61,7 +63,7 @@ function AddItem({ isOpen, onOpen, onClose }) {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent top={{base:"50px", md:"50px", lg:"0"}} borderTopRadius={"20px"} w={{base:"100%", md:"50%", lg:"40%"}} m="auto" >
+        <DrawerContent top={{base:"50px", md:"0px", lg:"0"}} borderTopRadius={"20px"} w={{base:"100%", md:"50%", lg:"40%"}} m="auto" >
           <DrawerCloseButton />
           <DrawerHeader borderBottom={"1px solid #E3E5E8"} color="#1C4980">
             Create new assessment
